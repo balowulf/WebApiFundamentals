@@ -8,16 +8,16 @@ using TheCodeCamp.Migrations;
 
 namespace TheCodeCamp.Data
 {
-  public class CampContext : DbContext
-  {
-    public CampContext() : base("CodeCampConnectionString")
+    public class CampContext : DbContext
     {
-      Database.SetInitializer(new MigrateDatabaseToLatestVersion<CampContext, Configuration>());
+        public CampContext() : base("CodeCampConnectionString")
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CampContext, Configuration>());
+        }
+
+        public DbSet<Camp> Camps { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<Talk> Talks { get; set; }
+
     }
-
-    public DbSet<Camp> Camps { get; set; }
-    public DbSet<Speaker> Speakers { get; set; }
-    public DbSet<Talk> Talks { get; set; }
-
-  }
 }

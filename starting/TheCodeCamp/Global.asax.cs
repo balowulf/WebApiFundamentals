@@ -12,14 +12,14 @@ using Autofac.Integration.WebApi;
 
 namespace TheCodeCamp
 {
-  public class WebApiApplication : System.Web.HttpApplication
-  {
-    protected void Application_Start()
+    public class WebApiApplication : System.Web.HttpApplication
     {
-      AreaRegistration.RegisterAllAreas();
-      GlobalConfiguration.Configure(WebApiConfig.Register);
-      FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-      RouteConfig.RegisterRoutes(RouteTable.Routes);
+        protected void Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+        }
     }
-  }
 }
